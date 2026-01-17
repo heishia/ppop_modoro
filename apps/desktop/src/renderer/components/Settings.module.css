@@ -1,36 +1,72 @@
-.settings {
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
-  gap: 24px;
-  padding: 16px 24px;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.2s ease;
+  -webkit-app-region: no-drag;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.modal {
   background: var(--color-white);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 4px 16px var(--color-shadow);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  padding: 12px 24px 24px;
+  width: 100%;
+  max-width: 400px;
+  animation: slideUp 0.3s ease;
+}
+
+.handle {
+  width: 40px;
+  height: 4px;
+  background: #ddd;
+  border-radius: 2px;
+  margin: 0 auto 16px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .settingGroup {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 8px;
+  gap: 10px;
+  margin-bottom: 16px;
 }
 
 .label {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--color-text-light);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-dark);
 }
 
 .options {
   display: flex;
-  gap: 6px;
+  gap: 8px;
 }
 
 .option {
-  width: 44px;
-  height: 36px;
-  font-size: 13px;
+  flex: 1;
+  padding: 12px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--color-text-light);
   background: #f5f6fa;
@@ -38,7 +74,7 @@
 }
 
 .option:disabled {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: not-allowed;
   transform: none;
 }
@@ -51,4 +87,22 @@
 .option.active.break {
   color: var(--color-white);
   background: var(--color-break-primary);
+}
+
+.warning {
+  font-size: 12px;
+  color: var(--color-text-light);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.closeButton {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-white);
+  background: var(--color-text-dark);
+  border-radius: var(--radius-md);
+  margin-top: 8px;
 }

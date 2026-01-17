@@ -19,23 +19,23 @@ export function Controls({ isRunning, mode, onStart, onPause, onReset, onStop }:
             className={`${styles.mainButton} ${styles[mode]}`}
             onClick={onPause}
           >
-            Pause
+            일시정지
           </button>
         ) : (
           <button
             className={`${styles.mainButton} ${styles[mode]}`}
             onClick={onStart}
           >
-            Start
+            시작
           </button>
         )}
       </div>
       <div className={styles.secondaryControls}>
         <button className={styles.secondaryButton} onClick={onReset}>
-          Reset
+          초기화
         </button>
         <button className={`${styles.secondaryButton} ${styles.stopButton}`} onClick={onStop}>
-          Stop
+          정지
         </button>
       </div>
     </div>

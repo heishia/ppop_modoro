@@ -53,6 +53,7 @@ button {
   border: none;
   outline: none;
   transition: var(--transition);
+  -webkit-app-region: no-drag;
 }
 
 button:hover {

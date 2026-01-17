@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "install:desktop": "cd apps/desktop && npm install",
+    "postinstall": "cd apps/desktop && npm install",
     "dev": "cd apps/desktop && npm run electron:dev",
     "build": "cd apps/desktop && npm run build",
     "build:win": "cd apps/desktop && npm run build:win",

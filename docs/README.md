@@ -65,7 +65,7 @@ apps/desktop/
 
 ### Setup
 ```bash
-npm run install:desktop
+npm install
 ```
 
 ### Development Mode

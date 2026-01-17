@@ -1,7 +1,7 @@
 .timerContainer {
   position: relative;
-  width: 280px;
-  height: 280px;
+  width: 200px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,9 +40,9 @@
 }
 
 .time {
-  font-size: 56px;
+  font-size: 40px;
   font-weight: 800;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   transition: var(--transition);
 }
 

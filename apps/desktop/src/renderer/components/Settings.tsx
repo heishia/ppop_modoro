@@ -6,6 +6,8 @@ interface SettingsProps {
   breakDuration: BreakDuration
   mode: TimerMode
   isRunning: boolean
+  isOpen: boolean
+  onClose: () => void
   onFocusChange: (duration: FocusDuration) => void
   onBreakChange: (duration: BreakDuration) => void
 }
@@ -18,40 +20,58 @@ export function Settings({
   breakDuration,
   mode,
   isRunning,
+  isOpen,
+  onClose,
   onFocusChange,
   onBreakChange,
 }: SettingsProps) {
+  if (!isOpen) return null
+
   return (
-    <div className={styles.settings}>
-      <div className={styles.settingGroup}>
-        <span className={styles.label}>Focus</span>
-        <div className={styles.options}>
-          {FOCUS_OPTIONS.map((opt) => (
-            <button
-              key={opt}
-              className={`${styles.option} ${focusDuration === opt ? styles.active : ''} ${styles[mode]}`}
-              onClick={() => onFocusChange(opt)}
-              disabled={isRunning}
-            >
-              {opt}m
-            </button>
-          ))}
+    <div className={styles.overlay} onClick={onClose}>
+      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+        <div className={styles.handle} />
+        <h2 className={styles.title}>설정</h2>
+        
+        <div className={styles.settingGroup}>
+          <span className={styles.label}>집중 시간</span>
+          <div className={styles.options}>
+            {FOCUS_OPTIONS.map((opt) => (
+              <button
+                key={opt}
+                className={`${styles.option} ${focusDuration === opt ? styles.active : ''} ${styles[mode]}`}
+                onClick={() => onFocusChange(opt)}
+                disabled={isRunning}
+              >
+                {opt}분
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
-      <div className={styles.settingGroup}>
-        <span className={styles.label}>Break</span>
-        <div className={styles.options}>
-          {BREAK_OPTIONS.map((opt) => (
-            <button
-              key={opt}
-              className={`${styles.option} ${breakDuration === opt ? styles.active : ''} ${styles[mode]}`}
-              onClick={() => onBreakChange(opt)}
-              disabled={isRunning}
-            >
-              {opt}m
-            </button>
-          ))}
+
+        <div className={styles.settingGroup}>
+          <span className={styles.label}>휴식 시간</span>
+          <div className={styles.options}>
+            {BREAK_OPTIONS.map((opt) => (
+              <button
+                key={opt}
+                className={`${styles.option} ${breakDuration === opt ? styles.active : ''} ${styles[mode]}`}
+                onClick={() => onBreakChange(opt)}
+                disabled={isRunning}
+              >
+                {opt}분
+              </button>
+            ))}
+          </div>
         </div>
+
+        {isRunning && (
+          <p className={styles.warning}>타이머 실행 중에는 변경할 수 없습니다</p>
+        )}
+
+        <button className={styles.closeButton} onClick={onClose}>
+          닫기
+        </button>
       </div>
     </div>
   )

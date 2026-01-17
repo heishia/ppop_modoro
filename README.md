@@ -13,7 +13,7 @@ A cute Pomodoro timer desktop application built with Electron and React.
 ## Quick Start
 
 ```bash
-npm run install:desktop
+npm install
 npm run dev
 ```
 

@@ -14,27 +14,27 @@ function formatTime(seconds: number): string {
 }
 
 export function Timer({ timeLeft, progress, mode }: TimerProps) {
-  const circumference = 2 * Math.PI * 140
+  const circumference = 2 * Math.PI * 90
   const strokeDashoffset = circumference - (progress / 100) * circumference
 
   return (
     <div className={styles.timerContainer}>
-      <svg className={styles.progressRing} viewBox="0 0 320 320">
+      <svg className={styles.progressRing} viewBox="0 0 200 200">
         <circle
           className={styles.progressBg}
-          cx="160"
-          cy="160"
-          r="140"
+          cx="100"
+          cy="100"
+          r="90"
           fill="none"
-          strokeWidth="12"
+          strokeWidth="8"
         />
         <circle
           className={`${styles.progressBar} ${styles[mode]}`}
-          cx="160"
-          cy="160"
-          r="140"
+          cx="100"
+          cy="100"
+          r="90"
           fill="none"
-          strokeWidth="12"
+          strokeWidth="8"
           strokeLinecap="round"
           style={{
             strokeDasharray: circumference,

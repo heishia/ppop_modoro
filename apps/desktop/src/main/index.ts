@@ -7,10 +7,12 @@ const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 400,
-    height: 520,
-    resizable: false,
-    frame: true,
+    width: 300,
+    height: 400,
+    minWidth: 280,
+    minHeight: 373,
+    resizable: true,
+    frame: false,
     transparent: false,
     webPreferences: {
       preload: path.join(__dirname, '../preload/index.js'),
@@ -18,6 +20,8 @@ function createWindow() {
       nodeIntegration: false,
     },
   })
+
+  mainWindow.setAspectRatio(300 / 400)
 
   if (isDev) {
     mainWindow.loadURL('http://localhost:5173')

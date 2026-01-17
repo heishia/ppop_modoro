@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, Notification } from 'electron'
+import { app, BrowserWindow, ipcMain, Notification, Menu } from 'electron'
 import * as path from 'path'
 
 let mainWindow: BrowserWindow | null = null
@@ -6,14 +6,17 @@ let mainWindow: BrowserWindow | null = null
 const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged
 
 function createWindow() {
+  Menu.setApplicationMenu(null)
+
   mainWindow = new BrowserWindow({
-    width: 300,
-    height: 400,
-    minWidth: 280,
-    minHeight: 373,
+    width: 240,
+    height: 320,
+    minWidth: 200,
+    minHeight: 280,
     resizable: true,
     frame: false,
     transparent: false,
+    titleBarStyle: 'hidden',
     webPreferences: {
       preload: path.join(__dirname, '../preload/index.js'),
       contextIsolation: true,
@@ -21,7 +24,7 @@ function createWindow() {
     },
   })
 
-  mainWindow.setAspectRatio(300 / 400)
+  mainWindow.setAspectRatio(240 / 320)
 
   if (isDev) {
     mainWindow.loadURL('http://localhost:5173')

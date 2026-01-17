@@ -7,10 +7,9 @@ interface ControlsProps {
   onStart: () => void
   onPause: () => void
   onReset: () => void
-  onStop: () => void
 }
 
-export function Controls({ isRunning, mode, onStart, onPause, onReset, onStop }: ControlsProps) {
+export function Controls({ isRunning, mode, onStart, onPause, onReset }: ControlsProps) {
   return (
     <div className={styles.controls}>
       <div className={styles.mainControls}>
@@ -33,9 +32,6 @@ export function Controls({ isRunning, mode, onStart, onPause, onReset, onStop }:
       <div className={styles.secondaryControls}>
         <button className={styles.secondaryButton} onClick={onReset}>
           초기화
-        </button>
-        <button className={`${styles.secondaryButton} ${styles.stopButton}`} onClick={onStop}>
-          정지
         </button>
       </div>
     </div>

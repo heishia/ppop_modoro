@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   width: 100%;
 }
 
@@ -12,13 +12,12 @@
 }
 
 .mainButton {
-  padding: 14px 48px;
-  font-size: 18px;
+  padding: 12px 40px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--color-white);
   border-radius: var(--radius-lg);
   box-shadow: 0 4px 16px var(--color-shadow);
-  -webkit-app-region: no-drag;
 }
 
 .mainButton.focus {
@@ -31,20 +30,15 @@
 
 .secondaryControls {
   display: flex;
-  gap: 12px;
+  gap: 10px;
 }
 
 .secondaryButton {
-  padding: 10px 24px;
-  font-size: 14px;
+  padding: 8px 20px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--color-text-light);
   background: var(--color-white);
   border-radius: var(--radius-md);
   box-shadow: 0 2px 8px var(--color-shadow);
-  -webkit-app-region: no-drag;
-}
-
-.stopButton {
-  color: #e74c3c;
 }

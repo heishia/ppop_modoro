@@ -28,22 +28,4 @@
   justify-content: center;
   background: transparent;
   color: var(--color-text-light);
-  opacity: 0.6;
-}
-
-.settingsButton:hover {
-  opacity: 1;
-  color: var(--color-text-dark);
-}
-
-.modeLabel {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--color-focus-primary);
-  letter-spacing: 1px;
-  transition: var(--transition);
-}
-
-.modeLabel.break {
-  color: var(--color-break-primary);
 }

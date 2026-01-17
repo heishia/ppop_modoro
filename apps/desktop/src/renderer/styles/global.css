@@ -49,7 +49,7 @@ body.break-mode {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  padding: 4px;
 }
 
 button {

@@ -9,10 +9,10 @@ function createWindow() {
   Menu.setApplicationMenu(null)
 
   mainWindow = new BrowserWindow({
-    width: 240,
-    height: 320,
-    minWidth: 200,
-    minHeight: 280,
+    width: 260,
+    height: 300,
+    minWidth: 220,
+    minHeight: 260,
     resizable: true,
     frame: false,
     transparent: false,
@@ -24,7 +24,7 @@ function createWindow() {
     },
   })
 
-  mainWindow.setAspectRatio(240 / 320)
+  mainWindow.setAspectRatio(260 / 300)
 
   if (isDev) {
     mainWindow.loadURL('http://localhost:5173')

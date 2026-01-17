@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   width: 100%;
-  max-width: 240px;
+  max-width: 260px;
 }
 
 .header {

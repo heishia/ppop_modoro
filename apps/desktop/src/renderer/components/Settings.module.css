@@ -3,38 +3,22 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   z-index: 100;
-  animation: fadeIn 0.2s ease;
   -webkit-app-region: no-drag;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from { transform: translateY(100%); }
-  to { transform: translateY(0); }
 }
 
 .modal {
   background: var(--color-white);
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  padding: 12px 24px 24px;
+  border-radius: var(--radius-lg);
+  padding: 24px;
   width: 100%;
-  max-width: 400px;
-  animation: slideUp 0.3s ease;
+  max-width: 280px;
 }
 
 .handle {
-  width: 40px;
-  height: 4px;
-  background: #ddd;
-  border-radius: 2px;
-  margin: 0 auto 16px;
+  display: none;
 }
 
 .title {

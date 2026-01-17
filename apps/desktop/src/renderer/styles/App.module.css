@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 360px;
+}
+
+.header {
+  text-align: center;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  margin-bottom: 4px;
+}
+
+.modeLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-focus-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: var(--transition);
+}
+
+.modeLabel.break {
+  color: var(--color-break-primary);
+}

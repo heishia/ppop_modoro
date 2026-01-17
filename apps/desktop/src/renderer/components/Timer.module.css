@@ -1,0 +1,55 @@
+.timerContainer {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progressRing {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progressBg {
+  stroke: var(--color-white);
+  filter: drop-shadow(0 4px 12px var(--color-shadow));
+}
+
+.progressBar {
+  transition: stroke-dashoffset 0.5s ease, stroke 0.3s ease;
+}
+
+.progressBar.focus {
+  stroke: var(--color-focus-primary);
+}
+
+.progressBar.break {
+  stroke: var(--color-break-primary);
+}
+
+.timeDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.time {
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  transition: var(--transition);
+}
+
+.time.focus {
+  color: var(--color-focus-primary);
+}
+
+.time.break {
+  color: var(--color-break-primary);
+}

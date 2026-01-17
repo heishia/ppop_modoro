@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-focus-bg: #fef3f0;
+  --color-focus-primary: #ff6b6b;
+  --color-focus-secondary: #ffa5a5;
+  --color-break-bg: #f0fef3;
+  --color-break-primary: #6bcb77;
+  --color-break-secondary: #a5ffa5;
+  --color-text-dark: #2d3436;
+  --color-text-light: #636e72;
+  --color-white: #ffffff;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--color-focus-bg);
+  color: var(--color-text-dark);
+  min-height: 100vh;
+  overflow: hidden;
+  transition: var(--transition);
+  -webkit-font-smoothing: antialiased;
+}
+
+body.break-mode {
+  background: var(--color-break-bg);
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: var(--transition);
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}

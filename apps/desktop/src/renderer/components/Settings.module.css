@@ -1,0 +1,54 @@
+.settings {
+  display: flex;
+  gap: 24px;
+  padding: 16px 24px;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 16px var(--color-shadow);
+}
+
+.settingGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.options {
+  display: flex;
+  gap: 6px;
+}
+
+.option {
+  width: 44px;
+  height: 36px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-light);
+  background: #f5f6fa;
+  border-radius: var(--radius-sm);
+}
+
+.option:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.option.active.focus {
+  color: var(--color-white);
+  background: var(--color-focus-primary);
+}
+
+.option.active.break {
+  color: var(--color-white);
+  background: var(--color-break-primary);
+}
